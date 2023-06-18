@@ -2,17 +2,18 @@ from chatterbot import ChatBot
 from chatterbot.trainers import ListTrainer, ChatterBotCorpusTrainer
 import collections.abc
 
-# collections.Hashable = collections.abc.Hashable
+collections.Hashable = collections.abc.Hashable
 
-# Create a new subclass of collections.abc.Hashable
-class CustomHashable(collections.abc.Hashable):
-    pass
+# Chatbot instance it loads the SQL table with the data over and over.
 
 testbot = ChatBot(
     "Test Bot", 
     logic_adapters = [
         "chatterbot.logic.BestMatch"
-])
+    ],
+    storage_adapter = "chatterbot.storage.SQLStorageAdapter",
+    database_uri = "sqlite:///chatbot_test_db.db"
+)
 
 clerk_convo = [
     "Hi",
@@ -46,10 +47,10 @@ corpus_trainer = ChatterBotCorpusTrainer(testbot)
 # for statement in clerk_convo:
 #     list_trainer.train(statement)
 
-list_trainer.train(clerk_convo)
+list_trainer.train(small_talk)
 
 while True:
-    bot_input
+    bot_input = ""
     try:
         bot_input = testbot.get_response(input("You: "))
         print(f"Test Bot: {bot_input}")
@@ -57,7 +58,3 @@ while True:
         break
     except (AttributeError):
         print("Bot: Sorry, I don't understand your query.")
-    if "Goodbye" or "goodbye" in bot_input:
-        break
-    else:
-        continue

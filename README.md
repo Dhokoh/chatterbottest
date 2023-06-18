@@ -19,6 +19,12 @@ I will use CS50's library, and sqlite3 as well as the codespace to make the robo
 
 But meanwhile, I will try to use the English corpus trainer, to see how the bot interacts. 
 
+** Attempt with only the English corpus trainer **
+
+Disastrous. It doesn't respond as well as it should with a corpus that, supposedly includes a lot of context like jokes and stuff... anyways. Trying to set up my own SQL database this time. See how it goes. 
+
+Reading about training the chatbot has been by far the most complex part, but also the most exciting. 
+
 
 
 
