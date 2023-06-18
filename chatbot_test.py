@@ -2,7 +2,11 @@ from chatterbot import ChatBot
 from chatterbot.trainers import ListTrainer, ChatterBotCorpusTrainer
 import collections.abc
 
-collections.Hashable = collections.abc.Hashable
+# collections.Hashable = collections.abc.Hashable
+
+# Create a new subclass of collections.abc.Hashable
+class CustomHashable(collections.abc.Hashable):
+    pass
 
 testbot = ChatBot(
     "Test Bot", 
@@ -39,10 +43,13 @@ corpus_trainer = ChatterBotCorpusTrainer(testbot)
 # corpus_trainer.train("chatterbot.corpus.english")
 # corpus_trainer.train("chatterbot.corpus.spanish")
 
-for statement in small_talk, clerk_convo:
-    list_trainer.train(statement)
+# for statement in clerk_convo:
+#     list_trainer.train(statement)
+
+list_trainer.train(clerk_convo)
 
 while True:
+    bot_input
     try:
         bot_input = testbot.get_response(input("You: "))
         print(f"Test Bot: {bot_input}")
@@ -50,3 +57,7 @@ while True:
         break
     except (AttributeError):
         print("Bot: Sorry, I don't understand your query.")
+    if "Goodbye" or "goodbye" in bot_input:
+        break
+    else:
+        continue
