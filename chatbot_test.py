@@ -39,7 +39,6 @@ corpus_trainer = ChatterBotCorpusTrainer(testbot)
 # corpus_trainer.train("chatterbot.corpus.english")
 # corpus_trainer.train("chatterbot.corpus.spanish")
 
-
 for statement in small_talk, clerk_convo:
     list_trainer.train(statement)
 
