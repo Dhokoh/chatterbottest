@@ -25,6 +25,10 @@ Disastrous. It doesn't respond as well as it should with a corpus that, supposed
 
 Reading about training the chatbot has been by far the most complex part, but also the most exciting. 
 
+The database's column data doesn't get named after the variable name I use to store the conversation array... I need a way to figure out how to access that in order to be able to train my chatbot with my own data. 
+
+
+
 
 
 
