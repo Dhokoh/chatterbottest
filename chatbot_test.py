@@ -47,7 +47,7 @@ corpus_trainer = ChatterBotCorpusTrainer(testbot)
 # for statement in clerk_convo:
 #     list_trainer.train(statement)
 
-list_trainer.train(small_talk)
+# list_trainer.train(small_talk)
 
 while True:
     bot_input = ""
