@@ -41,16 +41,9 @@ list_trainer = ListTrainer(testbot)
 
 corpus_trainer = ChatterBotCorpusTrainer(testbot)
 
-# corpus_trainer.train("chatterbot.corpus.english")
-# corpus_trainer.train("chatterbot.corpus.spanish")
-
-# for statement in clerk_convo:
-#     list_trainer.train(statement)
-
-# list_trainer.train(small_talk)
-
 while True:
     bot_input = ""
+    quit_words = ["q", "quit", "end"]
     try:
         bot_input = testbot.get_response(input("You: "))
         print(f"Test Bot: {bot_input}")
